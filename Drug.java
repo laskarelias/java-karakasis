@@ -5,12 +5,12 @@ public class Drug {
     private String name;
     private float cost; //Format Euro,Cent
 
-    public Drug(String name, float cost) {
+    public Drug(String name, float cost, int ID) {
         this.name = name;
         this.cost = cost;
 
-        //Generate ID
-
+        //Generated ID
+        this.ID = ID;
     }
 
     public int getID() {

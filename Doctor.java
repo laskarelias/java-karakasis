@@ -9,10 +9,10 @@ public class Doctor extends Person{
         this.SN = SN;
     }
 
-    public Doctor(String firstName, String lastName) {
+    public Doctor(String firstName, String lastName, String SN) {
         super(firstName, lastName);
 
-        //generate SN
-
+        //generated SN
+        this.SN = SN;
     }
 }

@@ -1,5 +1,7 @@
 import java.sql.Struct;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Random;
 
 public class Pharmacy {
 
@@ -49,10 +51,23 @@ public class Pharmacy {
 
     //Constructor for class Pharmacy
     public Pharmacy(String name, String road, int roadNumber, String town, String phoneNumber){
-        this.setName(name);
-        this.setPhoneNumber(phoneNumber);
-        this.setAddress(new Address(road, roadNumber, town));
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.address = new Address(road, roadNumber, town);
+
+        drugs = new ArrayList<>();
     }
+
+    // Functions
+    public void enterNewDrug(String name, float cost, int id){
+        for(Drug d : drugs){
+            //Look for duplicate entry
+            if(d.getName().equals(name)) return;
+        }
+        
+        drugs.add(new Drug(name,cost,id));
+    }
+
 
     public ArrayList<Drug> getDrugs() {
         return drugs;
